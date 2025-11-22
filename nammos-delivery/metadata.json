@@ -1,0 +1,5 @@
+{
+  "name": "Nammos Delivery",
+  "description": "Mobile-first delivery web application for Nammos Burgers connected to Firestore.",
+  "requestFramePermissions": []
+}
