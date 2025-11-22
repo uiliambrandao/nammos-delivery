@@ -37,7 +37,8 @@ export const CheckoutPage: React.FC = () => {
               subtotal: cartSubtotal,
               deliveryFee: deliveryFee,
               total: cartTotal,
-              address: orderType === OrderType.DELIVERY ? deliveryAddress! : undefined
+             address: orderType === OrderType.DELIVERY ? deliveryAddress : null
+
           };
 
           const orderId = await createOrder(orderPayload);
