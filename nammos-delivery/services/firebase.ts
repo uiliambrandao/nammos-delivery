@@ -23,12 +23,12 @@ const getEnv = (key: string) => {
 };
 
 const firebaseConfig = {
-  apiKey: getEnv('REACT_APP_FIREBASE_API_KEY') || "mock_key",
-  authDomain: getEnv('REACT_APP_FIREBASE_AUTH_DOMAIN') || "mock_domain",
-  projectId: getEnv('REACT_APP_FIREBASE_PROJECT_ID') || "nammos-burgers-mock",
-  storageBucket: getEnv('REACT_APP_FIREBASE_STORAGE_BUCKET'),
-  messagingSenderId: getEnv('REACT_APP_FIREBASE_MESSAGING_SENDER_ID'),
-  appId: getEnv('REACT_APP_FIREBASE_APP_ID')
+    apiKey: "AIzaSyAAa8vdB9LHJ1GzOaFgy8yE51T_BQTbZS8",
+  authDomain: "namos-burgers.firebaseapp.com",
+  projectId: "namos-burgers",
+  storageBucket: "namos-burgers.firebasestorage.app",
+  messagingSenderId: "683624050214",
+  appId: "1:683624050214:web:42951fb27f29cee6f400e7"
 };
 
 const app = initializeApp(firebaseConfig);
