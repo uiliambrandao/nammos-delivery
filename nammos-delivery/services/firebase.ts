@@ -176,6 +176,7 @@ export const createOrder = async (order: Omit<Order, 'id' | 'createdAt' | 'statu
   }
 };
 
+
 export const subscribeToOrder = (orderId: string, callback: (order: Order) => void) => {
   // Use mock if config is mock or if the order ID looks like our mock ID
   if (shouldUseMock() || orderId.startsWith('ORD-')) {
