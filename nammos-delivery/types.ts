@@ -11,7 +11,7 @@ export enum OrderStatus {
   IN_KITCHEN = 'in_kitchen',
   OUT_FOR_DELIVERY = 'out_for_delivery',
   DELIVERED = 'delivered',
-  CANCELLED = 'cancelled'
+  CANCELLED = 'cancelled',
 }
 
 export interface User {
