@@ -191,7 +191,7 @@ export const subscribeToOrder = (orderId: string, callback: (order: Order) => vo
       subtotal: 0,
       deliveryFee: 5,
       total: 50,
-      status: OrderStatus.PENDING,
+     status: 'pending',
       createdAt: Timestamp.now()
     };
 
