@@ -1,0 +1,5 @@
+{
+  "name": "Nammos Admin",
+  "description": "Painel administrativo completo para gerenciamento de pedidos e cardápio da Nammos Burgers.",
+  "requestFramePermissions": []
+}
