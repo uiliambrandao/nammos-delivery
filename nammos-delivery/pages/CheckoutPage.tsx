@@ -27,19 +27,33 @@ export const CheckoutPage: React.FC = () => {
       try {
           const deliveryFee = (orderType === OrderType.DELIVERY && restaurant) ? restaurant.deliveryFeeBase : 0;
           
-          const orderPayload: Omit<Order, 'id' | 'createdAt' | 'status'> = {
-              userId: currentUser.id!,
-              restaurantId: restaurant.id,
-              customerName: currentUser.name,
-              customerPhone: currentUser.phone,
-              orderType: orderType!,
-              items: cartItems,
-              subtotal: cartSubtotal,
-              deliveryFee: deliveryFee,
-              total: cartTotal,
-             address: orderType === OrderType.DELIVERY ? deliveryAddress : null
+      const orderPayload: Omit<Order, 'id' | 'createdAt' | 'status'> = {
+    userId: currentUser.id!,
+    restaurantId: restaurant.id,
+    customerName: currentUser.name,
+    customerPhone: currentUser.phone,
+    orderType: orderType!,
 
-          };
+    items: cartItems.map(item => ({
+        name: item.productNameSnapshot,
+        price: item.unitPrice,
+        quantity: item.quantity,
+        observations: item.observation || "",
+    })),
+
+    subtotal: cartSubtotal,
+    deliveryFee: deliveryFee,
+    total: cartTotal,
+
+    address: orderType === OrderType.DELIVERY ? {
+        street: deliveryAddress!.street,
+        number: deliveryAddress!.number,
+        neighborhood: deliveryAddress!.neighborhood,
+        city: deliveryAddress!.city,
+        reference: deliveryAddress!.reference || ""
+    } : undefined
+};
+
 
           const orderId = await createOrder(orderPayload);
           setActiveOrderId(orderId);
